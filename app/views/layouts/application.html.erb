@@ -5,8 +5,26 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse"> <!-- header indicates that this info should go at the top of the page -->
+      <div class="containter">
+        <%= link_to "sample app", '#', id: "logo" %> <!-- link_to method takes the text as first argument, then url as the second. # is a placeholder, third argument is for CSS -->
+        <nav>
+          <ul class="nav navbar-nav navbar-right"> <!-- three classes assigned here, separated by spaces -->
+            <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Help", '#' %></li>
+            <li><%= link_to "Login", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container"> <!-- container, nav, navbar-nav etc. are all special classes that have distinct meaning in Bootstrap -->
+      <%= yield %>  
+    </div>
   </body>
 </html>
