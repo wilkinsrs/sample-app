@@ -1,4 +1,5 @@
 require 'test_helper'
+# created with rails generate integration_test site_layout  // site_layout_test.rb created as a consequence
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
   # test "the truth" do

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   root              'static_pages#home' #the root method defines a root, but also creates route names(variables), root_path and root_url
   get 'help'    =>  'static_pages#help' #this syntax defines the route and also creates route names, help_path, help_url, which are variables that can be used elsehwere
   get 'about'   =>  'static_pages#about'
   get 'contact' =>  'static_pages#contact'
+  get 'signup'  =>  'users#new' #started off as get 'users/new' but can rename route this way
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
