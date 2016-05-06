@@ -9,7 +9,8 @@ class UserTest < ActiveSupport::TestCase
   # end
   
   def setup #set up an instance variable for all tests
-    @user = User.new(:name => "Example User", :email => "user@example.com")
+    @user = User.new(:name => "Example User", :email => "user@example.com",
+                      password: "foobar", password_confirmation: "foobar")
   end
   
   test "should be valid" do #test that the instance variable is valid
@@ -58,6 +59,16 @@ class UserTest < ActiveSupport::TestCase
     @user.save #saves @user to the db
     assert_not duplicate_user.valid? #asserts that duplicate_user isn't valid because @user.email already exists in db
   end #notice that .valid? checks the db automatically
+  
+  test "password should be present (not blank)" do
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
+  end
+  
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
+  end
     
   
 end
