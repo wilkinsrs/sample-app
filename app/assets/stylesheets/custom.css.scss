@@ -1,5 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap-sprockets"; // the @import rule is used to import stylesheets...that's how a lot of class names in the
+@import "bootstrap";          // html are named things that you don't see here...they're referencing these stylesheets
 
 /* mixins, variables, etc. */
 
@@ -30,6 +30,11 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.rails-logo {
+  display: block;
+  margin: auto;
 }
 
 /* typography */
