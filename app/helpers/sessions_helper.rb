@@ -8,4 +8,9 @@ module SessionsHelper
         @current_user ||= User.find_by(id: session[:user_id])
     end
     
+    def logged_in?
+        !current_user.nil? #read "the current user does not not have a session ID"
+    end
+    
+    
 end

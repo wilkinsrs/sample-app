@@ -1,0 +1,10 @@
+Run options: --seed 39400
+
+# Running:
+
+..
+
+Finished in 1.396849s, 1.4318 runs/s, 7.1590 assertions/s.
+
+2 runs, 10 assertions, 0 failures, 0 errors, 0 skips
+]2;[Minitest results] 2 tests
