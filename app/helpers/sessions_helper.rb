@@ -12,5 +12,10 @@ module SessionsHelper
         !current_user.nil? #read "the current user does not not have a session ID"
     end
     
+    def log_out
+        session.delete(:user_id)
+        @current_user = nil
+    end
+    
     
 end
